@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "azure-event-hubs": "^0.2.5",
     "body-parser": "^1.18.3",
     "documentdb": "^1.14.5",
     "express": "^4.16.3"

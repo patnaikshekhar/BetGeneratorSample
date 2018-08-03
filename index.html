@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Event Generator</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <div class="container">
+      <div class="form-group">
+        <label for="id">Customer Id</label>
+        <input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Enter Customer Id">
+      </div>
+      <button id="generate" class="btn btn-primary">Generate</button>
+      <button id="stop" class="btn">Stop</button>
+    </div>
+
+    <script>
+      $('#generate').click(() => {
+        $.post('/events/bets/generate/:id')
+          .then(() => {
+            console.log('Genration Started')
+          })
+          .catch(e => console.error(e))
+      })
+
+      $('#stop').click(() => {
+        $.post('/events/bets/stop/:id')
+          .then(() => {
+            console.log('Stopped')
+          })
+          .catch(e => console.error(e))
+      })
+    </script>
+  </body>
+</html>
