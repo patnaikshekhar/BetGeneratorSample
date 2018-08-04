@@ -14,7 +14,7 @@
     <div class="container">
       <div class="form-group">
         <label for="id">Customer Id</label>
-        <input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Enter Customer Id">
+        <input type="text" class="form-control" id="customerId" aria-describedby="emailHelp" placeholder="Enter Customer Id">
       </div>
       <button id="generate" class="btn btn-primary">Generate</button>
       <button id="stop" class="btn">Stop</button>
@@ -22,7 +22,7 @@
 
     <script>
       $('#generate').click(() => {
-        $.post('/events/bets/generate/:id')
+        $.post('/events/bets/generate/' + $('#customerId').val())
           .then(() => {
             console.log('Genration Started')
           })
@@ -30,7 +30,7 @@
       })
 
       $('#stop').click(() => {
-        $.post('/events/bets/stop/:id')
+        $.post('/events/bets/stop/' + $('#customerId').val())
           .then(() => {
             console.log('Stopped')
           })
