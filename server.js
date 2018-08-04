@@ -51,7 +51,7 @@ setInterval(() => {
         wonAmount: (wonLost == 'Won' ? Math.floor(Math.random() * 1000) : 0)
       }
 
-      const delivery = await client.send(eventData)
+      const delivery = await client.send({ body: JSON.stringify(eventData) })
 
       console.log("message sent successfully.", delivery.id)
     })
