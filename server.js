@@ -10,7 +10,7 @@ const TYPES = ['Sports', 'Lotto', 'Bingo', 'Poker', 'Slots'];
 const SPORT = ['Tennis', 'Cricket', 'Horse Racing', 'Football'];
 const WON_LOSS = ['Won', 'Lost', 'Lost', 'Lost', 'Lost'];
 
-const bet_events = []
+let bet_events = []
 
 app.use(bodyParser.json())
 
