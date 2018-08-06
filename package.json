@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
     "azure-event-hubs": "^0.2.5",
     "body-parser": "^1.18.3",
