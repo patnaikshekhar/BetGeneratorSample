@@ -24,7 +24,7 @@
       $('#generate').click(() => {
         $.post('/events/bets/generate/' + $('#customerId').val())
           .then(() => {
-            console.log('Genration Started')
+            alert('Generation Started')
           })
           .catch(e => console.error(e))
       })
@@ -32,7 +32,7 @@
       $('#stop').click(() => {
         $.post('/events/bets/stop/' + $('#customerId').val())
           .then(() => {
-            console.log('Stopped')
+            alert('Generation Stopped')
           })
           .catch(e => console.error(e))
       })
