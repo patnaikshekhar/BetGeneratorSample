@@ -21,11 +21,13 @@ app.get('/', (req, res) => {
 app.post('/events/bets/generate/:id', (req, res) => {
   const customerId = req.params.id
   bet_events.push(customerId)
+  res.end('Completed')
 })
 
 app.post('/events/bets/stop/:id', (req, res) => {
   const customerId = req.params.id
   bet_events = bet_events.filter(i => i != customerId)
+  res.end('Completed')
 })
 
 app.listen(process.env.PORT || 8090, () => {
